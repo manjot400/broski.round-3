@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Horizon Bank</title>
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a1128;
+            --bg-card: #121c3b;
+            --accent-gold: #d4af37;
+            --accent-gold-light: #f3e5ab;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(212, 175, 55, 0.2);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+       
+        .section-width {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+       
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 17, 40, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 2rem;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 1.35rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            display: flex;
+            align-items: center;
+            gap: 0.5srem;
+        }
+
+        .logo-mark {
+            background: linear-gradient(135deg, var(--accent-gold), #aa771c);
+            color: var(--bg-primary);
+            width: 32px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-gold);
+        }
+
+        .login-button {
+            background: transparent;
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .login-button:hover {
+            background: var(--accent-gold);
+            color: var(--bg-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        }
+
+       
+        .about-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 6rem 2rem 4rem;
+        }
+
+        .eyebrow {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .about-hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.15;
+        }
+
+        .about-hero h1 em {
+            color: var(--accent-gold);
+            font-style: italic;
+        }
+
+        .about-intro {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            border-left: 2px solid var(--border-color);
+            padding-left: 2rem;
+        }
+
+        /* Story Block */
+        .story-block {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 5rem 2rem;
+            background: linear-gradient(180deg, transparent, rgba(18, 28, 59, 0.4), transparent);
+        }
+
+        .story-image {
+            background: linear-gradient(145deg, #162247, #0d1530);
+            border: 1px solid var(--border-color);
+            height: 380px;
+            border-radius: 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .image-sun {
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, var(--accent-gold) 0%, rgba(212,175,55,0) 70%);
+            border-radius: 50%;
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            opacity: 0.6;
+        }
+
+        .story-image span {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--accent-gold);
+            letter-spacing: 4px;
+            z-index: 2;
+        }
+
+        .story-copy {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .story-copy h2 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        .story-copy p {
+            color: var(--text-muted);
+        }
+
+        .text-button {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .text-button:hover {
+            gap: 0.8rem;
+            color: var(--accent-gold-light);
+        }
+
+        
+        .values {
+            padding: 6rem 2rem;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-heading h2 {
+            font-size: 2.5rem;
+        }
+
+        .section-heading p {
+            color: var(--text-muted);
+            max-width: 400px;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .value-grid article {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            border-radius: 16px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-grid article:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+
+        .value-grid article span {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--accent-gold);
+            display: block;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .value-grid article h3 {
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-grid article p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+       
+        .site-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 3rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .site-footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .site-footer a:hover {
+            color: var(--accent-gold);
+        }
+
+       
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(5, 9, 20, 0.8);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-card {
+            background: var(--bg-card);
+            border: 1px solid var(--accent-gold);
+            padding: 2.5rem;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            transform: scale(0.95);
+            transition: var(--transition);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--accent-gold);
+        }
+
+        .modal-card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .form-group input {
+            width: 100%;
+            background: rgba(10, 17, 40, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            color: var(--text-main);
+            font-family: inherit;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .modal-submit {
+            width: 100%;
+            background: var(--accent-gold);
+            color: var(--bg-primary);
+            border: none;
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 0.5rem;
+        }
+
+        .modal-submit:hover {
+            background: var(--accent-gold-light);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+       
+        @media (max-width: 900px) {
+            .about-hero, .story-block, .section-heading, .value-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .section-heading {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav {
+                display: none;
+            }
+            .about-hero h1 {
+                font-size: 2.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+   
+    <header class="site-header">
+        <a class="logo" href="index.html">
+            <span class="logo-mark">H</span> Horizon<span>Bank</span>
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a class="active" href="about.html">About Us</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+        <button class="login-button" id="loginButton">Log in <span>→</span></button>
+    </header>
+
+   
+    <main>
+        <section class="about-hero section-width">
+            <div>
+                <p class="eyebrow">OUR STORY</p>
+                <h1>A bank that<br><em>looks ahead.</em></h1>
+            </div>
+            <div class="about-intro">
+                <p>Horizon Bank began with one simple idea: banking should help people feel more confident about the future, not more confused by it.</p>
+                <p>Today, we bring together thoughtful technology and real human support to make good money decisions feel within reach.</p>
+            </div>
+        </section>
+
+        <section class="story-block section-width">
+            <div class="story-image">
+                <div class="image-sun"></div>
+                <div class="image-line"></div>
+                <span>EST. 1998</span>
+            </div>
+            <div class="story-copy">
+                <p class="eyebrow">WHY HORIZON</p>
+                <h2>Progress is better<br>when it is shared.</h2>
+                <p>We believe a bank should be a steady partner through every season of life. That means clear answers, fair products, and people who listen before they advise.</p>
+                <p>Our team works every day to create a calmer, more useful banking experience for our customers and the communities we call home.</p>
+                <a class="text-button" href="index.html#contact">Start a conversation <span>→</span></a>
+            </div>
+        </section>
+
+        <section class="values section-width">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">WHAT GUIDES US</p>
+                    <h2>Good values.<br>Good business.</h2>
+                </div>
+                <p>Our principles show up in the small details: the way we explain things, solve problems, and show up for our customers.</p>
+            </div>
+            <div class="value-grid">
+                <article>
+                    <span>01</span>
+                    <h3>Keep it clear</h3>
+                    <p>No confusing language or hidden surprises. Just straightforward banking that makes sense.</p>
+                </article>
+                <article>
+                    <span>02</span>
+                    <h3>Stay curious</h3>
+                    <p>We keep learning, listening, and finding better ways to make tomorrow more possible.</p>
+                </article>
+                <article>
+                    <span>03</span>
+                    <h3>Be there</h3>
+                    <p>When life changes direction, our people are here with practical help and a human answer.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+   
+    <footer class="site-footer">
+        <a class="logo" href="index.html">
+            <span class="logo-mark">H</span> Horizon<span>Bank</span>
+        </a>
+        <p>© 2025 Horizon Bank. Banking for better tomorrows.</p>
+        <a href="index.html">Back home →</a>
+    </footer>
+
+    
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-card">
+            <button class="modal-close" id="closeModal">✕</button>
+            <h3>Welcome Back</h3>
+            <p>Access your Horizon Bank secure portal.</p>
+            <form onsubmit="event.preventDefault(); alert('Signed in successfully!');">
+                <div class="form-group">
+                    <label for="username">Username or Client ID</label>
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="modal-submit">Secure Log In</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <script>
+        const loginButton = document.getElementById('loginButton');
+        const loginModal = document.getElementById('loginModal');
+        const closeModal = document.getElementById('closeModal');
+
+       
+        loginButton.addEventListener('click', () => {
+            loginModal.classList.add('active');
+        });
+
+        
+        closeModal.addEventListener('click', () => {
+            loginModal.classList.remove('active');
+        });
+
+        
+        loginModal.addEventListener('click', (e) => {
+            if (e.target === loginModal) {
+                loginModal.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
